@@ -1,29 +1,46 @@
 <p id="notice"><%= notice %></p>
 
+<style>
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+
+}
+
+</style>
 <h1>Graphics</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Index</th>
-      <th>Test</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="chart">
+</div>
 
-  <tbody>
-    <% @graphics.each do |graphic| %>
-      <tr>
-        <td><%= graphic.index %></td>
-        <td><%= graphic.test %></td>
-        <td><%= link_to 'Show', graphic %></td>
-        <td><%= link_to 'Edit', edit_graphic_path(graphic) %></td>
-        <td><%= link_to 'Destroy', graphic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Graphic', new_graphic_path %>
+<script>
+
+var data = [4, 8, 15, 16, 23, 42];
+
+var body = d3.select("body");
+var div = body.append("div");
+div.html("Hello, world!");
+
+d3.select("body")
+.style("color", "black")
+.style("background-color", "white");
+
+d3.select(".chart")
+  .selectAll("div")
+.data(data)
+  .enter().append("div")
+  .style("width", function(d) { return d * 10 + "px";  })
+  .text(function(d) { return d;  });
+
+
+</script>
+
+
