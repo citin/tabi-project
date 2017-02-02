@@ -1,14 +1,198 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TabiProject</title>
+<head>
+    <title>tabi-project</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+
+<body>
+   <!-- NAV SECTION -->
+   <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">DATOS ABIERTOS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home-sec">INICIO</a></li>
+                <li><a href="#about">GRAFICO1</a></li>
+                <li><a href="#project">GRAFICO2</a></li>
+                <li><a href="#pricing">GRAFICO3</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!--END NAV SECTION -->
+
+<!--HOME SECTION-->
+<div id="home-sec">   
+    <div class="container"  >
+        <div class="row text-center">
+            <div  class="col-md-12" >
+                <span class="head-main" >TABI - ENTREGA FINAL</span>
+                <h3 class="head-last col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-2">Datos abiertos 
+                    de la Provincia de Buenos Aires	</h3>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END HOMESECTION-->  
+
+
+    <!--ABOUT SECTION-->
+    <section id="about"  >
+
+        <div class="container">
+            <div class="row g-pad-bottom ">
+                <div class="col-md-12 ">
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title panel-title-adjust">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <i class="fa fa-plus"></i> INTRODUCCION A DATOS ABIERTOS
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h3>DATOS DATOS DATOS DATOS </h3>
+                                    datos datos datos datos datos datos datos 
+                                    datos datos datos datos datos datos datos 
+                                    datos datos datos datos datos datos datos 
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title panel-title-adjust">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <i class="fa fa-plus"></i>GRAFICO 1 - Nacimientos
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <h3>DATOS DATOS DATOS DATOS</h3>
+                                  <div class="col-md-12">
+                                      <%= yield %>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4 class="panel-title panel-title-adjust">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <i class="fa fa-plus"></i>GRAFICO 2 
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3>DATOS DATOS DATOS DATOS</h3>
+                                datos datos datos datos datos datos datos 
+                                datos datos datos datos datos datos datos 
+                                datos datos datos datos datos datos datos 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title panel-title-adjust">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">
+                                    <i class="fa fa-plus"></i>GRAFICO 3
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapsefour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3>DATOS DATOS DATOS DATOS</h3>
+                                datos datos datos datos datos datos datos 
+                                datos datos datos datos datos datos datos 
+                                datos datos datos datos datos datos datos 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row text-center g-pad-bottom">
+
+            <div class="col-md-12">
+              <h2>GRUPO2: ANDRES BERNARDI - SERGIO BARRAGAN</h2>
+              <br />
+
+
+
+          </div>
+
+
+      </div>
+  </div>
+</section>
+<!--END ABOUT SECTION-->
+
+<!--PROJECT SECTION-->
+<section id="project" >
+    <div class="container">
+
+
+    </div>
+</section>
+<!--END PROJECT SECTION-->
+<!--PRICING SECTION-->
+<section id="pricing">
+    <div class="container">
+
+
+    </div>
+</section>
+<!--END PRICING SECTION-->
+<!--CONTACT SECTION-->
+<section class="qry" id="contact" >
+  <div class="container">
+
+  </div>
+
+</section>
+
+<!--END CONTACT SECTION-->
+
+<!--FOOTER SECTION -->
+<div id="footer">
+    <a href='www.datos.gba.gob.ar'>www.datos.gba.gob.ar</a>
+
+</div>
+<!-- END FOOTER SECTION -->
+
+<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY  -->
+
+
+</body>
+
 </html>

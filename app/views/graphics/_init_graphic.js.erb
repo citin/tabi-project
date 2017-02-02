@@ -1,0 +1,38 @@
+var meses = <%= @months.inspect.html_safe %>;
+var nacim = (<%= JSON.parse(@result).html_safe %>);
+
+	$(function () {
+    Highcharts.chart('container', {
+        title: {
+            text: 'Cantidad de Nacimientos.',
+            x: -20 //center     
+        },
+        subtitle: {
+            text: 'Fuente: http://datos.gba.gob.ar/',
+            x: -20
+        },
+        xAxis: {
+            categories: meses
+        },
+        yAxis: {
+            title: {
+                text: 'Nacimientos (cant. personas)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: <%= raw @result %>
+    });
+});
