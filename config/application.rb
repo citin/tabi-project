@@ -15,5 +15,7 @@ module TabiProject
 	config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 	config.assets.paths << Rails.root.join('/app/assets/fonts')
 
+        # Load /lib folder
+        config.autoload_paths << Rails.root.join('lib')
   end
 end

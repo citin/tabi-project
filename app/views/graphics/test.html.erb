@@ -1,44 +1,44 @@
 
-	<div class=''>
-		<div id="container" style=" width: ; height: null"></div>
-	</div>
+<div id="body">
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</div>
 
 <script>
 
-	$(function () {
-    Highcharts.chart('container', {
-        title: {
-            text: 'Cantidad de Nacimientos.',
-            x: -20 //center     
-        },
-        subtitle: {
-            text: 'Fuente: http://datos.gba.gob.ar/',
-            x: -20
-        },
-        xAxis: {
-            categories: <%= @months.to_json.html_safe %>
-        },
-        yAxis: {
-            title: {
-                text: 'Nacimientos (cant. personas)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: '(Nac.)'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: <%= @result.to_json.html_safe %>
-    });
+$(function () {
+  Highcharts.chart('container', {
+    title: {
+      text: 'Cantidad de Nacimientos.',
+      x: -20 //center     
+    },
+    subtitle: {
+      text: 'Fuente: http://datos.gba.gob.ar/',
+      x: -20
+    },
+    xAxis: {
+      categories: <%= @months.to_json.html_safe %>
+  },
+    yAxis: {
+      title: {
+        text: 'Nacimientos (cant. personas)'
+      },
+      plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+      }]
+    },
+    tooltip: {
+      valueSuffix: '(Nac.)'
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+    },
+    series: <%= @result.to_json.html_safe %>
+});
 });
 </script>
 <script src="https://code.highcharts.com/highcharts.js"></script>

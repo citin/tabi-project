@@ -3,7 +3,6 @@ class GraphicsController < ApplicationController
   MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]  
 
   def test
-
     @months = MONTHS
     @result = []
 
@@ -17,7 +16,18 @@ class GraphicsController < ApplicationController
       end
       @result << { "name": year.to_s, "data": data }
     end
-    
     @result 
+  end
+
+  def cultural_events
+    @events = EventRepo.all
+  end
+
+  def display_event
+    place = PlaceRepo.get_by_event_id params[:event_id]
+    if place
+      @lat = place.latitude
+      @long = place.longitude
+    end
   end
 end
