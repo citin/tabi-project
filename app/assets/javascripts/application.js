@@ -16,5 +16,6 @@
 //= require bootstrap
 //= require bootstrap.min
 //= require custom
+//= require leaflet-routing-machine
 //= require d3
 //= require turbolinks
