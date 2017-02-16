@@ -1,0 +1,45 @@
+<% if @lat.nil? %>
+  alert("No hay ubicacion del evento.");
+<% else %>
+  $('.event-info').html('ACA IRIA LA INFO DEL EVENTO: descripcion, horario, entrada, etc etc');
+  $('.map-container').append('<div id="map" class="map"></div>');
+
+  getLocation();
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      alert('no soporto la geolocalizacion');  
+    }
+  }
+
+function showPosition(position){
+  console.log(position);
+  var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+  // do our stuff here...
+
+  var map = L.map('map');
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+  console.log(position.coords.longitude);
+
+  L.Routing.control({
+    waypoints: [
+      L.latLng(position.coords.latitude, position.coords.longitude),
+      L.latLng(<%= @lat %>, <%= @long %>)
+        // L.latLng(57.74, 11.94),
+        // L.latLng(57.6792, 11.949)
+    ],
+    routeWhileDragging: true
+  }).addTo(map);
+}
+
+function showError(error) {
+  alert('sin geo no podemos hacer nada man');
+}
+<% end %>
